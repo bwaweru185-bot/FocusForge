@@ -1,0 +1,23 @@
+{
+  "name": "focusforge-study-app",
+  "version": "1.0.0",
+  "description": "AI-powered study app for smart learning",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "deploy": "npx netlify-cli deploy --prod --dir=.",
+    "build": "echo 'No build step required for static app'"
+  },
+  "keywords": ["education", "study", "ai", "pwa", "learning"],
+  "author": "FocusForge",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/focusforge-study-app"
+  },
+  "homepage": "https://yourusername.github.io/focusforge-study-app",
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "netlify-cli": "^15.0.0"
+  }
+}
