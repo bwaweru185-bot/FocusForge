@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusForge Study</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="sidebar" aria-label="Study workspace">
+        <div>
+          <p class="eyebrow">AI study app</p>
+          <h1>FocusForge</h1>
+          <p class="lede">Turn messy notes into a focused review plan, flashcards, and quiz prompts.</p>
+        </div>
+
+        <form class="note-form" id="noteForm">
+          <label for="topic">Topic</label>
+          <input id="topic" name="topic" type="text" value="Biology: Cell Transport" />
+
+          <label for="notes">Study notes</label>
+          <textarea id="notes" name="notes" rows="13">Diffusion is the passive movement of molecules from high concentration to low concentration. Osmosis is the movement of water across a selectively permeable membrane. Facilitated diffusion uses protein channels but does not require ATP. Active transport moves substances against their concentration gradient and requires energy, usually from ATP. Endocytosis brings large particles into the cell, while exocytosis releases materials out of the cell.</textarea>
+
+          <div class="controls">
+            <label for="level">Level</label>
+            <select id="level" name="level">
+              <option>Middle school</option>
+              <option selected>High school</option>
+              <option>College</option>
+            </select>
+          </div>
+
+          <button type="submit">Generate study kit</button>
+        </form>
+      </section>
+
+      <section class="workspace">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Current kit</p>
+            <h2 id="kitTitle">Biology: Cell Transport</h2>
+          </div>
+          <div class="score-card" aria-live="polite">
+            <span id="mastery">82%</span>
+            <small>estimated mastery</small>
+          </div>
+        </div>
+
+        <div class="tablist" role="tablist" aria-label="Study views">
+          <button class="tab active" data-tab="summary" type="button">Summary</button>
+          <button class="tab" data-tab="cards" type="button">Flashcards</button>
+          <button class="tab" data-tab="quiz" type="button">Quiz</button>
+          <button class="tab" data-tab="plan" type="button">Plan</button>
+        </div>
+
+        <section class="panel active" id="summary" aria-labelledby="Summary">
+          <div class="section-heading">
+            <h3>Smart Summary</h3>
+            <button class="ghost" id="copySummary" type="button">Copy</button>
+          </div>
+          <div class="summary-grid">
+            <article class="result-block">
+              <h4>What to remember</h4>
+              <ul id="summaryList"></ul>
+            </article>
+            <article class="result-block accent">
+              <h4>Likely exam angle</h4>
+              <p id="examAngle"></p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel" id="cards" aria-labelledby="Flashcards">
+          <div class="section-heading">
+            <h3>Flashcards</h3>
+            <button class="ghost" id="shuffleCards" type="button">Shuffle</button>
+          </div>
+          <div class="cards-grid" id="cardsGrid"></div>
+        </section>
+
+        <section class="panel" id="quiz" aria-labelledby="Quiz">
+          <div class="section-heading">
+            <h3>Practice Quiz</h3>
+            <button class="ghost" id="resetQuiz" type="button">Reset</button>
+          </div>
+          <div class="quiz-list" id="quizList"></div>
+        </section>
+
+        <section class="panel" id="plan" aria-labelledby="Plan">
+          <div class="section-heading">
+            <h3>30-Minute Session</h3>
+            <button class="ghost" id="startTimer" type="button">Start focus timer</button>
+          </div>
+          <div class="timer" id="timer">30:00</div>
+          <ol class="plan-list" id="planList"></ol>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
